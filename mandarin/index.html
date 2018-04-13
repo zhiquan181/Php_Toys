@@ -1,0 +1,68 @@
+<html>
+<head>
+  <title>普通话等级考试查询</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="普通话等级考试查询">
+  <style type="text/css">
+    *{margin: 0;padding: 0;border: 0;}
+    body{background-color: rgb(240,240,240);font-family: Microsoft YaHei;}
+    .mandarin_p{width: 100%;height: 50px;margin: 20px auto;background-color: rgb(255,255,255);}
+    .mandarin_input{width: 100%;height: 50px;float: left;display: block;padding-left: 10%;font-family: Microsoft YaHei;outline: none;}
+    .mandarin_sub{width: 100%;height: 50px;margin: 20px auto;}
+    .mandarin_btn{display: block;margin: 0 auto;width: 95%;height: 100%;font-family: Microsoft YaHei;background-color: rgb(90,215,0);color: #fff;font-size: 16px;}
+  </style>
+</head>
+<body>
+  <form method="post" action="mandarin_query.php">
+      <p align="center" style="font-size: 12px;margin-top: 20px;">请至少输入你的姓名、准考证号、身份证号中任意两项</p>
+      <p class="mandarin_p">
+      <input class="mandarin_input" name="name" type="text" placeholder="考生姓名" maxlength="30" value="">
+      </p>
+      <p class="mandarin_p">
+            <input class="mandarin_input" name="stuID" type="number" placeholder="准考证号" maxlength="30" value="">
+      </p>
+      <p class="mandarin_p">
+            <input class="mandarin_input" name="idCard" type="text" placeholder="身份证" maxlength="30" value="">
+      </p>
+      <p class="mandarin_sub">
+            <input id='show-toast' class="mandarin_btn" type="submit" value="查询" onclick="return form_onsubmit(this.form)" />
+      </p>
+  </form>
+  <script type="text/javascript">
+      function form_onsubmit(obj) 
+      {   
+            if(obj.name.value == "" && obj.stuID.value =="" && obj.idCard.value == "") {
+            alert("亲~请至少输入任意两项!");
+            return false;
+          } 
+
+          if(obj.name.value !== "" && obj.stuID.value =="" && obj.idCard.value == "") {
+            alert("亲~请至少输入任意两项!");
+            return false;
+          }
+
+          if(obj.name.value == "" && obj.stuID.value !=="" && obj.idCard.value == "") {
+            alert("亲~请至少输入任意两项!");
+            return false;
+          }
+
+          if(obj.name.value == "" && obj.stuID.value =="" && obj.idCard.value !== "") {
+            alert("亲~请至少输入任意两项!");
+            return false;
+          }
+
+          else{
+            // $(document).on("click", "#show-toast", function() {
+            //   $.toast("操作成功", function() {
+            //     console.log('close');
+            //   });
+            // })
+            return true;
+          }
+      }
+  </script>
+</body>
+</html>
+
+<p align="center" style="font-size: 12px;margin-top: 20px;">by 赛亚王子_Vegeta</p>
