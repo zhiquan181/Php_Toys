@@ -1,6 +1,6 @@
 # phptoys
 
-<br>
+这几个小玩意是在大三上学期，闲暇时用php做关于http请求的项目。<br>
 
 cet => 大学cet查询<br>
 domain => 为域名查询<br>
